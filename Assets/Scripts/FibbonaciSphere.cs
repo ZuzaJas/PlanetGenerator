@@ -271,7 +271,8 @@ public class FibbonaciSphere : MonoBehaviour
     (int A, int B, int count) edge) //nasze (A, B, bool)
     {
         List<(float, int)> PotencialVertecies = new List<(float, int)>();
-        for (int i=edge.A; i<numPoints*0.3; i++)
+        int j=Mathf.RoundToInt(edge.A/2);
+        for (int i=j; i<numPoints*0.4+edge.A; i++)
         {
             Vector3 AB = points[edge.B] - points[edge.A];
             Vector3 AC = points[i] - points[edge.A];
@@ -303,5 +304,4 @@ public class FibbonaciSphere : MonoBehaviour
     return Mathf.Min(angleA, Mathf.Min(angleB, angleC));
 }
 
-    
-    }
+}
